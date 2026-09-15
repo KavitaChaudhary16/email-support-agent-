@@ -1,7 +1,11 @@
+// Theme toggle — light/dark
+// Loads before script.js so the rest of your app can rely on data-theme
+// already being set on <html> by the time it runs.
+
 (function () {
     const root = document.documentElement;
     const toggleBtn = document.getElementById('themeToggle');
- 
+
     // Some browsers block localStorage on file:// pages and throw here —
     // wrap it so a storage failure can't stop the toggle from working.
     function getSavedTheme() {
@@ -11,7 +15,7 @@
             return null;
         }
     }
- 
+
     function saveTheme(value) {
         try {
             localStorage.setItem('theme', value);
@@ -19,16 +23,16 @@
             // ignore — theme just won't persist across reloads
         }
     }
- 
+
     const saved = getSavedTheme();
     if (saved === 'dark') {
         root.setAttribute('data-theme', 'dark');
         toggleBtn.textContent = 'Light mode';
     }
- 
+
     toggleBtn.addEventListener('click', function () {
         const isDark = root.getAttribute('data-theme') === 'dark';
- 
+
         if (isDark) {
             root.removeAttribute('data-theme');
             toggleBtn.textContent = 'Dark mode';

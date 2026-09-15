@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
+
     <!-- Header -->
     <header class="header">
         <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark theme">
@@ -20,11 +20,11 @@
             <p>Manage customer tickets and generate professional AI replies.</p>
         </div>
     </header>
- 
- 
+
+
     <!-- Dashboard -->
     <main class="dashboard">
- 
+
         <!-- Stat cards -->
         <section class="stats">
             <div class="stat-card">
@@ -40,7 +40,7 @@
                 <strong class="stat-value" id="statResolved">0</strong>
             </div>
         </section>
- 
+
         <!-- Search and Sort -->
         <section class="toolbar">
             <input
@@ -48,14 +48,14 @@
                 id="searchInput"
                 placeholder="Search tickets..."
             >
- 
+
             <select id="sortSelect">
                 <option value="newest">Newest first</option>
                 <option value="oldest">Oldest first</option>
             </select>
         </section>
- 
- 
+
+
         <!-- Filter Tabs -->
         <section class="filters">
             <button class="filter-btn active" data-status="all">All</button>
@@ -63,44 +63,44 @@
             <button class="filter-btn" data-status="pending">Pending</button>
             <button class="filter-btn" data-status="resolved">Resolved</button>
         </section>
- 
- 
+
+
         <!-- Ticket List -->
         <section class="ticket-section">
             <div class="section-header">
                 <h2>Support Tickets</h2>
                 <span id="ticketCount">0 tickets</span>
             </div>
- 
+
             <div id="ticketList">
                 <!-- ticket cards are injected here by script.js -->
             </div>
         </section>
- 
+
         <!-- Pagination -->
         <section class="pagination">
             <button id="prevBtn">Previous</button>
             <span id="pageNumber">Page 1</span>
             <button id="nextBtn">Next</button>
         </section>
- 
- 
+
+
         <!-- Email Generation Workspace -->
         <section class="workspace">
- 
+
             <!-- Left Side -->
             <div class="workspace-left">
                 <h2>Generate Support Reply</h2>
- 
+
                 <label for="customerName">Customer Name</label>
                 <input type="text" id="customerName" placeholder="Enter customer name">
- 
+
                 <label for="customerEmail">Customer Email</label>
                 <input type="email" id="customerEmail" placeholder="Enter customer email">
- 
+
                 <label for="issue">Customer Issue</label>
                 <textarea id="issue" rows="7" placeholder="Describe the customer's issue..."></textarea>
- 
+
                 <label for="priority">Priority</label>
                 <select id="priority">
                     <option value="low">Low</option>
@@ -108,7 +108,7 @@
                     <option value="high">High</option>
                     <option value="urgent">Urgent</option>
                 </select>
- 
+
                 <label for="tone">Reply Tone</label>
                 <select id="tone">
                     <option value="professional">Professional</option>
@@ -116,41 +116,40 @@
                     <option value="formal">Formal</option>
                     <option value="empathetic">Empathetic</option>
                 </select>
- 
+
                 <button id="generateBtn">Generate AI Reply</button>
             </div>
- 
+
             <!-- Right Side -->
             <div class="workspace-right">
                 <div class="generated-header">
                     <h2>Generated Email</h2>
                     <button id="copyBtn">Copy Email</button>
                 </div>
- 
+
                 <div id="emailOutput" class="email-output">
                     <p class="empty-message">Your AI-generated support email will appear here.</p>
                 </div>
- 
+
                 <!-- AI Confidence -->
                 <div class="confidence">
                     <span>AI Response Confidence</span>
                     <strong id="confidenceScore">--</strong>
                 </div>
             </div>
- 
+
         </section>
- 
+
     </main>
- 
- 
+
+
     <!-- Footer -->
     <footer>
         <p>AI Email Support System &bull; Customer Support Assistant</p>
     </footer>
- 
- 
+
+
     <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
- 

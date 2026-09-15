@@ -1,10 +1,16 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 app.use(cors());              // allows your frontend (different port) to call this server
 app.use(express.json());      // lets us read JSON bodies like { issue, tone, name }
+
+// Serve the frontend (index.html, script.js, style.css, theme.js) from this
+// same server. Once deployed, visiting the root URL loads the whole app —
+// no separate frontend hosting needed.
+app.use(express.static(path.join(__dirname, "public")));
 
 const PORT = process.env.PORT || 5000;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
@@ -54,7 +60,7 @@ Respond ONLY with valid JSON in exactly this shape, nothing else, no markdown fe
 
         // Gemini's free tier occasionally returns 503 "high demand" — retry a
         // couple of times with a short delay before giving up.
-        const MAX_ATTEMPTS = 3;
+        const MAX_ATTEMPTS = 5;
         let geminiRes;
 
         for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
@@ -71,7 +77,7 @@ Respond ONLY with valid JSON in exactly this shape, nothing else, no markdown fe
 
             if (isOverloaded && !isLastAttempt) {
                 console.warn(`Gemini overloaded (attempt ${attempt}/${MAX_ATTEMPTS}), retrying in ${attempt}s...`);
-                await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+                await new Promise((resolve) => setTimeout(resolve, attempt * 2000));
                 continue;
             }
 
@@ -128,4 +134,4 @@ app.get("/api/health", (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
-})
+});

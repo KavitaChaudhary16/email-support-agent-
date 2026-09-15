@@ -1,3 +1,4 @@
+/* ---------- Theme variables ---------- */
 :root {
     --bg-page: #fafafa;
     --bg-surface: #ffffff;
@@ -7,7 +8,7 @@
     --text-secondary: #6b6b6b;
     --text-muted: #999;
 }
- 
+
 [data-theme="dark"] {
     --bg-page: #15161a;
     --bg-surface: #1e1f24;
@@ -17,14 +18,14 @@
     --text-secondary: #a8a8ac;
     --text-muted: #77787d;
 }
- 
+
 /* ---------- Reset & base ---------- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
- 
+
 body {
     font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
     background: var(--bg-page);
@@ -32,7 +33,7 @@ body {
     line-height: 1.5;
     transition: background 0.2s ease, color 0.2s ease;
 }
- 
+
 /* ---------- Header ---------- */
 .header {
     background: var(--bg-surface);
@@ -41,20 +42,20 @@ body {
     position: relative;
     text-align: center;
 }
- 
+
 .header-title h1 {
     font-family: "Poppins", -apple-system, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: 0.2px;
 }
- 
+
 .header p {
     color: var(--text-secondary);
     margin-top: 6px;
     font-size: 0.95rem;
 }
- 
+
 .theme-toggle {
     position: absolute;
     top: 32px;
@@ -67,54 +68,54 @@ body {
     font-size: 0.85rem;
     cursor: pointer;
 }
- 
+
 .theme-toggle:hover {
     background: var(--bg-page);
 }
- 
+
 /* ---------- Dashboard layout ---------- */
 .dashboard {
     max-width: 1000px;
     margin: 0 auto;
     padding: 30px 20px 60px;
 }
- 
+
 .dashboard section {
     margin-bottom: 24px;
 }
- 
+
 /* ---------- Stat cards ---------- */
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
 }
- 
+
 .stat-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 16px 20px;
 }
- 
+
 .stat-label {
     display: block;
     font-size: 0.8rem;
     color: var(--text-secondary);
     margin-bottom: 6px;
 }
- 
+
 .stat-value {
     font-size: 1.6rem;
     font-weight: 600;
 }
- 
+
 /* ---------- Toolbar (search + sort) ---------- */
 .toolbar {
     display: flex;
     gap: 12px;
 }
- 
+
 .toolbar input,
 .toolbar select {
     padding: 10px 12px;
@@ -124,17 +125,17 @@ body {
     background: var(--bg-surface);
     color: var(--text-primary);
 }
- 
+
 #searchInput {
     flex: 1;
 }
- 
+
 /* ---------- Filter tabs ---------- */
 .filters {
     display: flex;
     gap: 8px;
 }
- 
+
 .filter-btn {
     padding: 8px 16px;
     border: 1px solid var(--border-color-strong);
@@ -145,17 +146,17 @@ body {
     cursor: pointer;
     transition: background 0.15s ease;
 }
- 
+
 .filter-btn:hover {
     background: var(--bg-page);
 }
- 
+
 .filter-btn.active {
     background: var(--text-primary);
     color: var(--bg-surface);
     border-color: var(--text-primary);
 }
- 
+
 /* ---------- Ticket section ---------- */
 .ticket-section {
     background: var(--bg-surface);
@@ -163,30 +164,30 @@ body {
     border-radius: 12px;
     padding: 20px;
 }
- 
+
 .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 14px;
 }
- 
+
 .section-header h2 {
     font-size: 1.1rem;
     font-weight: 600;
 }
- 
+
 #ticketCount {
     font-size: 0.85rem;
     color: var(--text-secondary);
 }
- 
+
 #ticketList {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
- 
+
 /* Individual ticket card — script.js should build elements with this class */
 .ticket-card {
     display: flex;
@@ -199,21 +200,21 @@ body {
     cursor: pointer;
     transition: border-color 0.15s ease;
 }
- 
+
 .ticket-card:hover {
     border-color: var(--border-color-strong);
 }
- 
+
 .ticket-main {
     flex: 1;
     min-width: 0;
 }
- 
+
 .ticket-customer {
     font-weight: 600;
     font-size: 0.9rem;
 }
- 
+
 .ticket-subject {
     font-size: 0.85rem;
     color: var(--text-secondary);
@@ -221,19 +222,19 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
- 
+
 .ticket-meta {
     font-size: 0.75rem;
     color: var(--text-muted);
     margin-top: 2px;
 }
- 
+
 .ticket-tags {
     display: flex;
     gap: 6px;
     flex-shrink: 0;
 }
- 
+
 .tag {
     font-size: 0.75rem;
     padding: 3px 10px;
@@ -241,18 +242,18 @@ body {
     font-weight: 500;
     white-space: nowrap;
 }
- 
+
 /* status tags */
 .tag-open      { background: #e6f1fb; color: #0c447c; }
 .tag-pending   { background: #faeeda; color: #633806; }
 .tag-resolved  { background: #eaf3de; color: #27500a; }
- 
+
 /* priority tags */
 .tag-low     { background: #f1efe8; color: #444441; }
 .tag-medium  { background: #e6f1fb; color: #0c447c; }
 .tag-high    { background: #faeeda; color: #633806; }
 .tag-urgent  { background: #fcebeb; color: #791f1f; }
- 
+
 /* ---------- Pagination ---------- */
 .pagination {
     display: flex;
@@ -260,7 +261,7 @@ body {
     align-items: center;
     gap: 16px;
 }
- 
+
 .pagination button {
     padding: 8px 16px;
     border: 1px solid var(--border-color-strong);
@@ -270,24 +271,24 @@ body {
     cursor: pointer;
     font-size: 0.85rem;
 }
- 
+
 .pagination button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
- 
+
 #pageNumber {
     font-size: 0.85rem;
     color: var(--text-secondary);
 }
- 
+
 /* ---------- Workspace (reply generator) ---------- */
 .workspace {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
- 
+
 .workspace-left,
 .workspace-right {
     background: var(--bg-surface);
@@ -295,13 +296,13 @@ body {
     border-radius: 12px;
     padding: 20px;
 }
- 
+
 .workspace h2 {
     font-size: 1.05rem;
     font-weight: 600;
     margin-bottom: 14px;
 }
- 
+
 .workspace-left label {
     display: block;
     font-size: 0.8rem;
@@ -309,11 +310,11 @@ body {
     margin: 12px 0 6px;
     color: var(--text-secondary);
 }
- 
+
 .workspace-left label:first-of-type {
     margin-top: 0;
 }
- 
+
 .workspace-left input,
 .workspace-left select,
 .workspace-left textarea {
@@ -326,11 +327,11 @@ body {
     background: var(--bg-surface);
     color: var(--text-primary);
 }
- 
+
 .workspace-left textarea {
     resize: vertical;
 }
- 
+
 #generateBtn {
     margin-top: 18px;
     width: 100%;
@@ -343,18 +344,18 @@ body {
     font-weight: 600;
     cursor: pointer;
 }
- 
+
 #generateBtn:hover {
     opacity: 0.85;
 }
- 
+
 .generated-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 14px;
 }
- 
+
 #copyBtn {
     padding: 6px 14px;
     border: 1px solid var(--border-color-strong);
@@ -364,7 +365,7 @@ body {
     font-size: 0.8rem;
     cursor: pointer;
 }
- 
+
 .email-output {
     min-height: 200px;
     border: 1px solid var(--border-color);
@@ -375,12 +376,12 @@ body {
     background: var(--bg-page);
     color: var(--text-primary);
 }
- 
+
 .empty-message {
     color: var(--text-muted);
     font-style: italic;
 }
- 
+
 .confidence {
     display: flex;
     justify-content: space-between;
@@ -391,12 +392,12 @@ body {
     font-size: 0.85rem;
     color: var(--text-secondary);
 }
- 
+
 #confidenceScore {
     font-size: 1rem;
     color: var(--text-primary);
 }
- 
+
 /* ---------- Footer ---------- */
 footer {
     text-align: center;
@@ -404,36 +405,36 @@ footer {
     font-size: 0.8rem;
     color: var(--text-muted);
 }
- 
+
 /* ---------- Responsive ---------- */
 @media (max-width: 800px) {
- 
+
     .header {
         padding: 25px;
     }
- 
+
     .dashboard {
         padding: 0 15px;
     }
- 
+
     .stats {
         grid-template-columns: 1fr 1fr;
     }
- 
+
     .toolbar {
         flex-direction: column;
     }
- 
+
     .filters {
         flex-wrap: wrap;
     }
- 
+
     .ticket-card {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
     }
- 
+
     .workspace {
         grid-template-columns: 1fr;
     }

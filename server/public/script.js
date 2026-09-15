@@ -156,9 +156,11 @@ nextBtn.addEventListener("click", () => {
 
 // ---------------------------------------------------------------
 // Reply generator — calls our backend, which calls the Gemini API.
-// Backend URL: change this if your server runs somewhere else.
+// Empty string = same origin the page was loaded from. Since the
+// backend now serves this frontend too, this works both locally
+// (http://localhost:5000) and after deployment automatically.
 // ---------------------------------------------------------------
-const API_BASE = "http://localhost:5000";
+const API_BASE = "";
 
 generateBtn.addEventListener("click", async () => {
     const name = document.getElementById("customerName").value.trim();
