@@ -2,6 +2,9 @@
 
 An AI-powered customer support ticketing system. It classifies incoming customer emails, drafts context-aware replies using Google's Gemini API, and lets a human agent review and send the response — instead of writing every reply from scratch.
 
+## Live Demo
+[https://your-app.onrender.com](https://your-app.onrender.com)
+
 ## Features
 
 - **Ticket dashboard** — search, sort (newest/oldest), and filter tickets by status (All / Open / Pending / Resolved)
